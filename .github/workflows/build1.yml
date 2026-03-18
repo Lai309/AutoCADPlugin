@@ -15,7 +15,7 @@ jobs:
       run: call build.bat          # chạy script build DLL
 
     - name: Upload DLL artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: MyPluginDLL
         path: bin\Release\MyPlugin.dll
