@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest   # Windows runner có .NET Framework 4.x
 
     steps:
-    - uses: actions/checkout@v3   # lấy code repo
+    - uses: actions/checkout@v4   # lấy code repo
 
     - name: Run build.bat
       run: call build.bat          # chạy script build DLL
