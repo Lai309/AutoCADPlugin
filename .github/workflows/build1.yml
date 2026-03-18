@@ -1,0 +1,21 @@
+name: Build AutoCAD DLL
+
+on:
+  push:
+    branches: [ main ]   # chạy khi push lên main
+
+jobs:
+  build:
+    runs-on: windows-latest   # Windows runner có .NET Framework 4.x
+
+    steps:
+    - uses: actions/checkout@v3   # lấy code repo
+
+    - name: Run build.bat
+      run: call build.bat          # chạy script build DLL
+
+    - name: Upload DLL artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: MyPluginDLL
+        path: bin\Release\MyPlugin.dll
